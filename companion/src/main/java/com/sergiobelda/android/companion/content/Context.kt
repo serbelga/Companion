@@ -10,8 +10,9 @@ import androidx.annotation.RequiresApi
 
 /**
  * The version name of the package application, as specified by the <manifest>
- * tag's {@link android.R.styleable#AndroidManifest_versionName versionName}
+ * tag's [android.R.styleable#AndroidManifest_versionName]
  * attribute.
+ *
  * @return versionName if defined or null if not.
  */
 fun Context.getVersionName(): String? {
@@ -25,9 +26,9 @@ fun Context.getVersionName(): String? {
 }
 
 /**
- * Return {@link android.R.styleable#AndroidManifest_versionCode versionCode} and
- * {@link android.R.styleable#AndroidManifest_versionCodeMajor versionCodeMajor} combined
- * together as a single long value.
+ * Return versionCode and versionCodeMajor combined together as a
+ * single long value. versionCodeMajor is placed in the upper 32 bits.
+ *
  * @return versionCode if defined or null if not.
  */
 @RequiresApi(Build.VERSION_CODES.P)
