@@ -36,12 +36,12 @@ fun AlertDialog.Builder.title(title: String) {
     this.setTitle(title)
 }
 
-fun AlertDialog.Builder.title(@StringRes titleId: Int) {
-    this.setTitle(titleId)
+fun AlertDialog.Builder.title(@StringRes resId: Int) {
+    this.setTitle(resId)
 }
 
-fun AlertDialog.Builder.icon(@DrawableRes iconId: Int) {
-    this.setIcon(iconId)
+fun AlertDialog.Builder.icon(@DrawableRes drawableResId: Int) {
+    this.setIcon(drawableResId)
 }
 
 fun AlertDialog.Builder.message(message: String) {
