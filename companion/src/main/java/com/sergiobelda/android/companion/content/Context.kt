@@ -58,6 +58,12 @@ fun Context.getColorFromAttr(
     } else null
 }
 
-fun Context.pxToDp(px: Float): Int {
-    return (px / resources.displayMetrics.density).toInt()
-}
+/**
+ * Converts Px to Dp.
+ *
+ * @return [px] converted to Dp as [Float].
+ */
+fun Context.pxToDp(px: Float): Float? =
+    resources?.displayMetrics?.density?.let { density ->
+        px / density
+    }
