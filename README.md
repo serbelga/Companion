@@ -1,6 +1,6 @@
 # Companion
 
-
+A collection of Android extensions and utilities.
 
 ## License
 
