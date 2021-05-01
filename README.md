@@ -2,6 +2,10 @@
 
 A collection of Android extensions and utilities.
 
+```gradle
+implementation "dev.sergiobelda.android.companion:companion:0.1.0"
+```
+
 ## Extensions
 
 ## Util
