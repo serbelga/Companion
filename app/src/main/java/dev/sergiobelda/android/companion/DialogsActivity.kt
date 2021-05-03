@@ -50,9 +50,9 @@ class DialogsActivity : AppCompatActivity() {
             message(R.string.lorem_ipsum_short)
             positiveButton(R.string.ok) {
                 Toast.makeText(
-                        this@DialogsActivity,
-                        "Positive button click",
-                        Toast.LENGTH_SHORT
+                    this@DialogsActivity,
+                    "Positive button click",
+                    Toast.LENGTH_SHORT
                 ).show()
             }
             negativeButton("Cancel")
@@ -60,7 +60,7 @@ class DialogsActivity : AppCompatActivity() {
 
     private fun singleChoiceItemsDialog() =
         createMaterialDialog(
-                this
+            this
         ) {
             title(R.string.single_choice_items)
             singleChoiceItems(R.array.items, checkedItem = 0) {
@@ -71,18 +71,19 @@ class DialogsActivity : AppCompatActivity() {
         }.show()
 
     private fun multipleChoiceItemsDialog() {
-        val map = mapOf<CharSequence, Boolean>(
-            "Item 0" to true,
-            "Item 1" to false,
-            "Item 2" to true
-        )
+        val items = arrayOf<CharSequence>("Item 0", "Item 1", "Item 2")
+        val booleanArray = booleanArrayOf(true, false, true)
         createMaterialDialog(this) {
             isCancelable = false
             title(R.string.multiple_choice_items_dialog)
-            multipleChoiceItems(map.keys.toTypedArray(), map.values.toBooleanArray()) { item, isChecked ->
-                Toast.makeText(this@DialogsActivity, "Item $item: $isChecked", Toast.LENGTH_SHORT).show()
+            multipleChoiceItems(items, booleanArray) { item, isChecked ->
+                booleanArray[item] = isChecked
+                Toast.makeText(this@DialogsActivity, "Item $item: $isChecked", Toast.LENGTH_SHORT)
+                    .show()
             }
-            positiveButton(R.string.ok)
+            positiveButton(R.string.ok) {
+                Toast.makeText(this@DialogsActivity, booleanArray.joinToString(), Toast.LENGTH_SHORT).show()
+            }
         }.show()
     }
 
