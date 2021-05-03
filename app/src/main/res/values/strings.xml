@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Companion</string>
+    <string name="dialogs">Dialogs</string>
+    <string name="simple_dialog">Simple Dialog</string>
+    <string name="ok">Ok</string>
+    <string name="lorem_ipsum_short">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin egestas lorem sed pretium. Morbi orci arcu, feugiat id posuere quis, tincidunt vitae turpis.</string>
+    <string name="single_choice_items">Single choice items</string>
+    <string name="cancel">Cancel</string>
+    <string name="other">Other</string>
+    <string name="centered_dialog">Centered Dialog</string>
+    <string name="lorem_ipsum_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin egestas lorem sed pretium. Morbi orci arcu, feugiat id posuere quis, tincidunt vitae turpis. Fusce tortor nulla, ullamcorper eu vestibulum ut, pellentesque vel tortor. Proin at metus et tortor aliquet fermentum id at magna. Ut iaculis fringilla nisi id ullamcorper. Maecenas tempus arcu quis ultricies consectetur. Mauris luctus, mauris eget posuere pretium, velit velit viverra odio, quis gravida dui lacus id sapien. Nullam velit enim, bibendum a mi nec, elementum porttitor libero. Cras sodales diam et magna tincidunt, ac dignissim urna ullamcorper. Curabitur ac odio elit. Aenean imperdiet ullamcorper lacus. Maecenas vitae nisi sit amet nibh aliquam ultricies. Aliquam sit amet auctor ipsum. Praesent ac elementum nulla. Nam vitae justo elementum, rutrum ante et, laoreet nisi.
+
+Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque mattis tortor eget nunc pellentesque, nec convallis enim suscipit. Morbi eget tristique felis. In fermentum ante ipsum, non tempus erat tempor eu. Mauris id bibendum nisi. Maecenas suscipit odio a efficitur pellentesque. Aliquam erat volutpat. Nullam egestas risus augue, a volutpat ante tempor eu. Suspendisse viverra eu mauris eu pretium. Suspendisse nec turpis et erat blandit finibus a ut enim. Aenean hendrerit mattis nulla, at pretium sapien accumsan vel.
+
+Nam ornare mi eros, vitae gravida risus sagittis ut. Cras pellentesque, sem a eleifend condimentum, justo nibh porta neque, in fermentum elit purus et diam. Pellentesque ultrices nisi diam, sed blandit orci tempus id. Cras urna nunc, vehicula eu lectus eu, malesuada tincidunt sapien. Sed vitae diam sed ante suscipit pretium. Quisque finibus lacus a urna suscipit, id maximus arcu sodales. Praesent non sapien quis lectus laoreet ornare. Fusce ex lectus, tempus in porttitor dignissim, consequat ac ante. Aliquam ornare interdum elit, ac scelerisque risus mattis ac. Morbi eu egestas erat, et scelerisque elit. Phasellus non lacinia ex, vitae placerat lacus. Nam vehicula varius tortor sit amet venenatis. Sed aliquam gravida sapien non malesuada. Aliquam tincidunt sit amet tellus quis placerat.</string>
+    <string name="multiple_choice_items_dialog">Multiple choice items</string>
+
+    <array name="items">
+        <item>Item 0</item>
+        <item>Item 1</item>
+        <item>Item 2</item>
+    </array>
 </resources>

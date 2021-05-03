@@ -17,10 +17,15 @@
 package dev.sergiobelda.android.companion.material
 
 import android.content.Context
+import android.graphics.drawable.Drawable
+import android.view.View
+import android.widget.ListAdapter
+import androidx.annotation.ArrayRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.annotation.StyleRes
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import com.google.android.material.R
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -48,6 +53,7 @@ inline fun createMaterialDialog(
         dialogBuilder()
     }.create()
 
+// region Title
 fun AlertDialog.Builder.title(title: String) {
     this.setTitle(title)
 }
@@ -55,11 +61,19 @@ fun AlertDialog.Builder.title(title: String) {
 fun AlertDialog.Builder.title(@StringRes resId: Int) {
     this.setTitle(resId)
 }
+// endregion
 
+// region Icon
 fun AlertDialog.Builder.icon(@DrawableRes drawableResId: Int) {
     this.setIcon(drawableResId)
 }
 
+fun AlertDialog.Builder.icon(drawable: Drawable) {
+    this.setIcon(drawable)
+}
+// endregion
+
+// region Message
 fun AlertDialog.Builder.message(message: String) {
     this.setMessage(message)
 }
@@ -67,11 +81,52 @@ fun AlertDialog.Builder.message(message: String) {
 fun AlertDialog.Builder.message(@StringRes resId: Int) {
     this.setMessage(context.getString(resId))
 }
+// endregion
 
-fun AlertDialog.Builder.singleChoiceItems(items: Array<CharSequence>, checkedItem: Int, onClick: (which: Int) -> Unit = {}) {
+// region Single Choice Items
+fun AlertDialog.Builder.singleChoiceItems(
+    items: Array<CharSequence>,
+    checkedItem: Int, onClick: (which: Int) -> Unit = {}
+) {
     this.setSingleChoiceItems(items, checkedItem) { _, which -> onClick(which) }
 }
 
+fun AlertDialog.Builder.singleChoiceItems(
+    @ArrayRes arrayResId: Int,
+    checkedItem: Int,
+    onClick: (item: Int) -> Unit = {}
+) {
+    this.setSingleChoiceItems(arrayResId, checkedItem) { _, item -> onClick(item) }
+}
+
+fun AlertDialog.Builder.singleChoiceItems(
+    adapter: ListAdapter,
+    checkedItem: Int,
+    onClick: (item: Int) -> Unit = {}
+) {
+    this.setSingleChoiceItems(adapter, checkedItem) { _, item -> onClick(item) }
+}
+// endregion
+
+// region Multiple Choice Items
+fun AlertDialog.Builder.multipleChoiceItems(
+    items: Array<CharSequence>,
+    checkedItem: BooleanArray,
+    onClick: (item: Int, isChecked: Boolean) -> Unit = { _, _ -> }
+) {
+    this.setMultiChoiceItems(items, checkedItem) { _, item, isChecked -> onClick(item, isChecked) }
+}
+
+fun AlertDialog.Builder.multipleChoiceItems(
+    @ArrayRes arrayResId: Int,
+    checkedItem: BooleanArray,
+    onClick: (item: Int, isChecked: Boolean) -> Unit = { _, _ -> }
+) {
+    this.setMultiChoiceItems(arrayResId, checkedItem) { _, item, isChecked -> onClick(item, isChecked) }
+}
+// endregion
+
+// region Positive Button
 fun AlertDialog.Builder.positiveButton(text: String, onClick: (which: Int) -> Unit = {}) {
     this.setPositiveButton(text) { _, which -> onClick(which) }
 }
@@ -80,6 +135,12 @@ fun AlertDialog.Builder.positiveButton(@StringRes resId: Int, onClick: (which: I
     this.setPositiveButton(resId) { _, which -> onClick(which) }
 }
 
+fun AlertDialog.Builder.positiveButtonIcon(@DrawableRes drawableResId: Int) {
+    this.setPositiveButtonIcon(ContextCompat.getDrawable(this.context, drawableResId))
+}
+// endregion
+
+// region Neutral Button
 fun AlertDialog.Builder.neutralButton(text: String, onClick: (which: Int) -> Unit = {}) {
     this.setNeutralButton(text) { _, which -> onClick(which) }
 }
@@ -88,6 +149,12 @@ fun AlertDialog.Builder.neutralButton(@StringRes resId: Int, onClick: (which: In
     this.setNeutralButton(resId) { _, which -> onClick(which) }
 }
 
+fun AlertDialog.Builder.neutralButtonIcon(@DrawableRes drawableResId: Int) {
+    this.setNeutralButtonIcon(ContextCompat.getDrawable(this.context, drawableResId))
+}
+// endregion
+
+// region Negative Button
 fun AlertDialog.Builder.negativeButton(text: String, onClick: (which: Int) -> Unit = {}) {
     this.setNegativeButton(text) { _, which -> onClick(which) }
 }
@@ -95,3 +162,24 @@ fun AlertDialog.Builder.negativeButton(text: String, onClick: (which: Int) -> Un
 fun AlertDialog.Builder.negativeButton(@StringRes resId: Int, onClick: (which: Int) -> Unit = {}) {
     this.setNegativeButton(resId) { _, which -> onClick(which) }
 }
+
+fun AlertDialog.Builder.negativeButtonIcon(@DrawableRes drawableResId: Int) {
+    this.setNegativeButtonIcon(ContextCompat.getDrawable(this.context, drawableResId))
+}
+// endregion
+
+// region View
+fun AlertDialog.Builder.view(view: View) {
+    this.setView(view)
+}
+
+fun AlertDialog.Builder.view(layoutResId: Int) {
+    this.setView(layoutResId)
+}
+// endregion
+
+var AlertDialog.Builder.isCancelable: Boolean
+    get() = true
+    set(value) {
+        this.setCancelable(value)
+    }

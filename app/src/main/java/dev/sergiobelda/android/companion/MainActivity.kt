@@ -18,10 +18,19 @@ package dev.sergiobelda.android.companion
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import dev.sergiobelda.android.companion.app.launchActivity
+import dev.sergiobelda.android.companion.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.dialogButton.setOnClickListener {
+            launchActivity<DialogsActivity>()
+        }
     }
 }
