@@ -135,6 +135,10 @@ fun AlertDialog.Builder.positiveButton(@StringRes resId: Int, onClick: (which: I
     this.setPositiveButton(resId) { _, which -> onClick(which) }
 }
 
+fun AlertDialog.Builder.positiveButtonIcon(drawable: Drawable) {
+    this.setPositiveButtonIcon(drawable)
+}
+
 fun AlertDialog.Builder.positiveButtonIcon(@DrawableRes drawableResId: Int) {
     this.setPositiveButtonIcon(ContextCompat.getDrawable(this.context, drawableResId))
 }
@@ -149,6 +153,10 @@ fun AlertDialog.Builder.neutralButton(@StringRes resId: Int, onClick: (which: In
     this.setNeutralButton(resId) { _, which -> onClick(which) }
 }
 
+fun AlertDialog.Builder.neutralButtonIcon(drawable: Drawable) {
+    this.setNeutralButtonIcon(drawable)
+}
+
 fun AlertDialog.Builder.neutralButtonIcon(@DrawableRes drawableResId: Int) {
     this.setNeutralButtonIcon(ContextCompat.getDrawable(this.context, drawableResId))
 }
@@ -161,6 +169,10 @@ fun AlertDialog.Builder.negativeButton(text: String, onClick: (which: Int) -> Un
 
 fun AlertDialog.Builder.negativeButton(@StringRes resId: Int, onClick: (which: Int) -> Unit = {}) {
     this.setNegativeButton(resId) { _, which -> onClick(which) }
+}
+
+fun AlertDialog.Builder.negativeButtonIcon(drawable: Drawable) {
+    this.setNegativeButtonIcon(drawable)
 }
 
 fun AlertDialog.Builder.negativeButtonIcon(@DrawableRes drawableResId: Int) {
