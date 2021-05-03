@@ -2,6 +2,42 @@
 
 A collection of Android extensions and utilities.
 
+```gradle
+implementation "dev.sergiobelda.android.companion:companion:0.1.0"
+```
+
+## Dialogs
+
+```kotlin
+createMaterialDialog(context = requireContext()) {
+    title(R.string...)
+    singleChoiceItems(items, checkedItem) {
+        checkedItem = it
+    }
+    positiveButton(getString(R.string.accept)) {
+        // Do something
+    }
+    negativeButton(getString(R.string.cancel))
+}.show()
+```
+
+### Centered
+
+```kotlin
+createMaterialDialog(
+    requireContext(),
+    R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered
+) {
+    title(R.string...)
+    icon(R.drawable...)
+    message(R.string...)
+    positiveButton(getString(R.string.accept)) {
+        // Do something
+    }
+    negativeButton(getString(R.string.cancel))
+}.show()
+```
+
 ## Extensions
 
 ## Util
