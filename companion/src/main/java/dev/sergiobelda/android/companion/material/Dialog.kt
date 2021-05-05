@@ -74,7 +74,7 @@ fun AlertDialog.Builder.icon(drawable: Drawable) {
 // endregion
 
 // region Message
-fun AlertDialog.Builder.message(message: String) {
+fun AlertDialog.Builder.message(message: CharSequence) {
     this.setMessage(message)
 }
 
