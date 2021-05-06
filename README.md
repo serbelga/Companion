@@ -97,22 +97,22 @@ launchActivityForResult<MyActivity>(REQUEST_CODE) {
 
 ```kotlin
 // Return Version name
-fun getVersionName()
+getVersionName()
 ```
 
 ```kotlin
 // Return Version code
-fun getVersionCode()
+getVersionCode()
 ```
 
 ```kotlin
 // Return a color associated with a particular attribute ID
-fun getColorFromAttr(@AttrRes attrColor: Int): Int?
+val color: Int? = getColorFromAttr(R.attr....)
 ```
 
 ```kotlin
 // Convert Px to Dp
-fun pxToDp(px: Float): Float?
+val dp: Float? = pxToDp(px)
 ```
 
 ## License
