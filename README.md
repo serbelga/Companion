@@ -97,12 +97,12 @@ launchActivityForResult<MyActivity>(REQUEST_CODE) {
 
 ```kotlin
 // Return Version name
-getVersionName()
+val versionName: String? = getVersionName()
 ```
 
 ```kotlin
 // Return Version code
-getVersionCode()
+val versionCode: Long? = getVersionCode()
 ```
 
 ```kotlin
