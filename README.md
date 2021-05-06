@@ -71,9 +71,49 @@ createMaterialDialog(
 }.show()
 ```
 
-## Extensions
+## Activity
 
-## Util
+### Launch Activity
+
+```kotlin
+launchActivity<MyActivity>()
+
+launchActivity<MyActivity> {
+    putExtra(...)
+}
+```
+
+### Launch Activity for Result
+
+```kotlin
+launchActivityForResult<MyActivity>(REQUEST_CODE)
+
+launchActivityForResult<MyActivity>(REQUEST_CODE) {
+    putExtra(...)
+}
+```
+
+## Context
+
+```kotlin
+// Return Version name
+fun getVersionName()
+```
+
+```kotlin
+// Return Version code
+fun getVersionCode()
+```
+
+```kotlin
+// Return a color associated with a particular attribute ID
+fun getColorFromAttr(@AttrRes attrColor: Int): Int?
+```
+
+```kotlin
+// Convert Px to Dp
+fun pxToDp(px: Float): Float?
+```
 
 ## License
 
