@@ -3,7 +3,7 @@
 A collection of Android extensions and utilities.
 
 ```gradle
-implementation "dev.sergiobelda.android.companion:companion:0.1.1"
+implementation "dev.sergiobelda.android.companion:companion:0.1.2"
 ```
 
 ## Dialogs
@@ -71,9 +71,49 @@ createMaterialDialog(
 }.show()
 ```
 
-## Extensions
+## Activity
 
-## Util
+### Launch Activity
+
+```kotlin
+launchActivity<MyActivity>()
+
+launchActivity<MyActivity> {
+    putExtra(...)
+}
+```
+
+### Launch Activity for Result
+
+```kotlin
+launchActivityForResult<MyActivity>(REQUEST_CODE)
+
+launchActivityForResult<MyActivity>(REQUEST_CODE) {
+    putExtra(...)
+}
+```
+
+## Context
+
+```kotlin
+// Return Version name
+val versionName: String? = getVersionName()
+```
+
+```kotlin
+// Return Version code
+val versionCode: Long? = getVersionCode()
+```
+
+```kotlin
+// Return a color associated with a particular attribute ID
+val color: Int? = getColorFromAttr(R.attr....)
+```
+
+```kotlin
+// Convert Px to Dp
+val dp: Float? = pxToDp(px)
+```
 
 ## License
 
