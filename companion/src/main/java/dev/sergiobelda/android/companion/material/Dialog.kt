@@ -54,7 +54,7 @@ inline fun createMaterialDialog(
     }.create()
 
 // region Title
-fun AlertDialog.Builder.title(title: String) {
+fun AlertDialog.Builder.title(title: CharSequence) {
     this.setTitle(title)
 }
 
@@ -127,7 +127,7 @@ fun AlertDialog.Builder.multipleChoiceItems(
 // endregion
 
 // region Positive Button
-fun AlertDialog.Builder.positiveButton(text: String, onClick: (which: Int) -> Unit = {}) {
+fun AlertDialog.Builder.positiveButton(text: CharSequence, onClick: (which: Int) -> Unit = {}) {
     this.setPositiveButton(text) { _, which -> onClick(which) }
 }
 
@@ -145,7 +145,7 @@ fun AlertDialog.Builder.positiveButtonIcon(@DrawableRes drawableResId: Int) {
 // endregion
 
 // region Neutral Button
-fun AlertDialog.Builder.neutralButton(text: String, onClick: (which: Int) -> Unit = {}) {
+fun AlertDialog.Builder.neutralButton(text: CharSequence, onClick: (which: Int) -> Unit = {}) {
     this.setNeutralButton(text) { _, which -> onClick(which) }
 }
 
@@ -163,7 +163,7 @@ fun AlertDialog.Builder.neutralButtonIcon(@DrawableRes drawableResId: Int) {
 // endregion
 
 // region Negative Button
-fun AlertDialog.Builder.negativeButton(text: String, onClick: (which: Int) -> Unit = {}) {
+fun AlertDialog.Builder.negativeButton(text: CharSequence, onClick: (which: Int) -> Unit = {}) {
     this.setNegativeButton(text) { _, which -> onClick(which) }
 }
 

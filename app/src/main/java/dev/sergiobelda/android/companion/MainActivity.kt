@@ -18,7 +18,7 @@ package dev.sergiobelda.android.companion
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import dev.sergiobelda.android.companion.app.launchActivity
+import dev.sergiobelda.android.companion.content.launchActivity
 import dev.sergiobelda.android.companion.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
