@@ -3,7 +3,7 @@
 A collection of Android extensions and utilities.
 
 ```gradle
-implementation "dev.sergiobelda.android.companion:companion:0.1.2"
+implementation "dev.sergiobelda.android.companion:companion:0.1.3"
 ```
 
 ## Dialogs
